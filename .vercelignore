@@ -1,13 +1,21 @@
 # Local dev tooling and source material — not part of the deployed site
 node_modules
 temporary screenshots
-package.json
-package-lock.json
+dist
+src
+build.mjs
 serve.mjs
 screenshot.mjs
+lighthouse.mjs
+tailwind.config.js
+postcss.config.js
+package.json
+package-lock.json
 CLAUDE.md
+README.md
 MWM-Vending-Brand-Kit.md
 MWM-Vending-Brand-Kit.pdf
+MWMLogo.png
 MWMCurrentWebsite.png
 VVSModelWebsite.png
 amModelWebsite1.png

@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-body text-ink bg-white;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display;
+    letter-spacing: -0.02em;
+  }
+  h2, h3 {
+    text-wrap: balance;
+  }
+  h1 {
+    letter-spacing: -0.03em;
+    text-wrap: pretty;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  :focus-visible {
+    outline: 3px solid #01aef0;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  ::selection {
+    background: #01aef0;
+    color: #14172e;
+  }
+}
+
+@layer components {
+  .wrap {
+    @apply max-w-content mx-auto px-5 sm:px-6 lg:px-8;
+  }
+  .section {
+    @apply py-16 lg:py-24;
+  }
+  .eyebrow {
+    @apply font-display text-navy text-[15px] font-semibold;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-sm px-5 py-3 text-[15px] font-medium transition duration-200 ease-out;
+  }
+  .btn-primary {
+    @apply btn bg-navy text-white hover:bg-navy-dark hover:-translate-y-0.5 active:translate-y-0 shadow-card hover:shadow-hover;
+  }
+  .btn-secondary {
+    @apply btn bg-white text-navy border-[1.5px] border-navy hover:bg-mist active:bg-mist;
+  }
+  .btn-accent {
+    @apply btn bg-cyan text-ink font-semibold hover:brightness-95 hover:-translate-y-0.5 active:translate-y-0 shadow-card hover:shadow-hover;
+  }
+  .link-cyan {
+    @apply text-navy underline decoration-cyan decoration-2 underline-offset-2 hover:text-cyan transition-colors;
+  }
+  .card {
+    @apply bg-white rounded-md p-6 shadow-card transition duration-200 ease-out;
+  }
+  .field {
+    @apply w-full rounded-sm border border-slate/40 bg-white px-4 py-3 text-[16px] text-ink placeholder:text-slate/70 focus:border-navy focus:ring-0 transition-colors;
+  }
+  .field-label {
+    @apply block text-[14px] font-medium text-ink/75 mb-1.5;
+  }
+}
+
+/* Plain CSS (not layered, never purged) --------------------------------- */
+
+.grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  mix-blend-mode: soft-light;
+  background-image: url("/images/noise.png");
+  background-size: 120px 120px;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+.bubbles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+.bubbles circle {
+  transform-box: fill-box;
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

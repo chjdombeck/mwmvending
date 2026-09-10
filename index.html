@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Smart Coolers, Vending Machines & Micro-Markets in New England and New York | MWM Vending</title>
+<meta name="description" content="MWM Vending provides vending machines, AI smart coolers, office coffee, and micro-markets across New England and New York, with local teams in every territory. All at no cost to you.">
+<link rel="canonical" href="https://mwmvending.com/">
+<meta name="theme-color" content="#2D3192">
+
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="MWM Vending | Vending Machines, AI Smart Coolers & Micro-Markets">
+<meta property="og:description" content="Vending machines, AI smart coolers, office coffee, and micro-markets across New England and New York, with local teams in every territory. All at no cost to you.">
+<meta property="og:url" content="https://mwmvending.com/">
+<meta property="og:image" content="https://mwmvending.com/MWMLogo.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="MWMLogo.png">
+<link rel="apple-touch-icon" href="MWMLogo.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: '#2D3192',
+          'navy-dark': '#262a80',
+          cyan: '#01AEF0',
+          ink: '#14172E',
+          slate: '#667085',
+          mist: '#F4F7FB',
+        },
+        fontFamily: {
+          display: ['Sora', 'system-ui', 'sans-serif'],
+          body: ['Inter', 'system-ui', 'sans-serif'],
+        },
+        borderRadius: { sm: '8px', md: '16px', full: '999px' },
+        boxShadow: {
+          card: '0 1px 2px rgba(20,23,46,0.06), 0 4px 12px rgba(20,23,46,0.06)',
+          hover: '0 8px 20px rgba(20,23,46,0.10)',
+        },
+        maxWidth: { content: '1120px' },
+      },
+    },
+  };
+</script>
+<style type="text/tailwindcss">
+  @layer base {
+    html { scroll-behavior: smooth; }
+    body { @apply font-body text-ink bg-white; font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3, h4 { @apply font-display; letter-spacing: -0.02em; text-wrap: balance; }
+    h1 { letter-spacing: -0.03em; }
+    p { text-wrap: pretty; }
+    :focus-visible { outline: 3px solid #01AEF0; outline-offset: 2px; border-radius: 4px; }
+    ::selection { background: #01AEF0; color: #14172E; }
+  }
+  @layer components {
+    .wrap { @apply max-w-content mx-auto px-5 sm:px-6 lg:px-8; }
+    .section { @apply py-16 lg:py-24; }
+    .eyebrow { @apply font-display text-navy text-[15px] font-semibold; }
+    .grain { position: absolute; inset: 0; pointer-events: none; opacity: 0.4; mix-blend-mode: soft-light;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E"); }
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s cubic-bezier(.22,1,.36,1), transform .6s cubic-bezier(.22,1,.36,1); }
+    .reveal.in { opacity: 1; transform: none; }
+
+    /* Carbonation ambiance: hero background (SVG bubbles, populated by JS) */
+    .bubbles { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+    .bubbles circle { transform-box: fill-box; transform-origin: center; will-change: transform, opacity; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      html { scroll-behavior: auto; }
+    }
+    .btn { @apply inline-flex items-center justify-center gap-2 rounded-sm px-5 py-3 text-[15px] font-medium transition duration-200 ease-out; }
+    .btn-primary { @apply btn bg-navy text-white hover:bg-navy-dark hover:-translate-y-0.5 active:translate-y-0 shadow-card hover:shadow-hover; }
+    .btn-secondary { @apply btn bg-white text-navy border-[1.5px] border-navy hover:bg-mist active:bg-mist; }
+    .btn-accent { @apply btn bg-cyan text-navy font-semibold hover:brightness-95 hover:-translate-y-0.5 active:translate-y-0 shadow-card hover:shadow-hover; }
+    .link-cyan { @apply text-navy underline decoration-cyan decoration-2 underline-offset-2 hover:text-cyan transition-colors; }
+    .card { @apply bg-white rounded-md p-6 shadow-card transition duration-200 ease-out; }
+    .field { @apply w-full rounded-sm border border-slate/40 bg-white px-4 py-3 text-[16px] text-ink placeholder:text-slate/70 focus:border-navy focus:ring-0 transition-colors; }
+    .field-label { @apply block text-[14px] font-medium text-ink/75 mb-1.5; }
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "MWM Vending",
+  "description": "Vending machines, AI smart coolers, office coffee, and micro-market service across New England and New York, with local teams in every territory.",
+  "url": "https://mwmvending.com/",
+  "telephone": "+1-413-200-9068",
+  "email": "info@mwmvending.com",
+  "image": "https://mwmvending.com/MWMLogo.png",
+  "areaServed": ["New England", "New York"],
+  "priceRange": "Free installation",
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "MA",
+    "addressCountry": "US"
+  }
+}
+</script>
+</head>
+
+<body class="antialiased">
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-3 focus:left-3 focus:bg-navy focus:text-white focus:px-4 focus:py-2 focus:rounded-sm">Skip to content</a>
+
+<!-- Header -->
+<header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate/10">
+  <div class="wrap flex items-center justify-between h-[86px]">
+    <a href="#top" class="flex items-center" aria-label="MWM Vending home">
+      <img src="MWMLogo.png" alt="MWM Vending" width="163" height="52" class="h-[52px] w-auto">
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium text-ink" aria-label="Primary">
+      <a class="hover:text-navy transition-colors" href="#services">Services</a>
+      <a class="hover:text-navy transition-colors" href="#why">Why MWM</a>
+      <a class="hover:text-navy transition-colors" href="#how">How it works</a>
+      <a class="hover:text-navy transition-colors" href="#equipment">Equipment</a>
+    </nav>
+    <a href="#contact" class="btn-primary hidden sm:inline-flex">Get a free consultation</a>
+    <a href="#contact" class="btn-primary sm:hidden !px-4 !py-2">Get started</a>
+  </div>
+</header>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- Hero -->
+<section class="relative overflow-hidden bg-[#CCD7EF]">
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true"
+       style="background:
+         linear-gradient(180deg, rgba(45,49,146,0.18), rgba(45,49,146,0) 46%),
+         radial-gradient(55% 55% at 6% -8%, rgba(1,174,240,0.38), transparent 60%),
+         radial-gradient(52% 58% at 104% 4%, rgba(45,49,146,0.34), transparent 58%),
+         radial-gradient(45% 45% at 78% 108%, rgba(1,174,240,0.22), transparent 60%);"></div>
+  <span class="grain" aria-hidden="true"></span>
+  <svg class="bubbles" aria-hidden="true" preserveAspectRatio="none"></svg>
+  <div class="wrap relative z-[1] grid lg:grid-cols-2 gap-12 lg:gap-12 items-center py-16 lg:py-24">
+    <div>
+      <p class="eyebrow">Vending machines across the Northeast, USA</p>
+      <h1 class="mt-4 text-[clamp(2.35rem,5vw,3.25rem)] font-bold leading-[1.1] text-ink">
+        Convenience delivered to your break room.
+      </h1>
+      <p class="mt-5 max-w-[52ch] text-ink/75">
+        MWM brings vending machines, AI smart coolers, and micro-markets to workplaces of every kind
+        across the New England and New York area.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="#contact" class="btn-primary">Get a free consultation</a>
+        <a href="#equipment" class="btn-secondary">See our equipment</a>
+      </div>
+      <ul class="mt-9 flex flex-wrap gap-x-6 gap-y-2 text-[14px] text-ink">
+        <li class="flex items-center gap-2">
+          <svg class="text-cyan shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          No cost to your business
+        </li>
+        <li class="flex items-center gap-2">
+          <svg class="text-cyan shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          US-made equipment
+        </li>
+        <li class="flex items-center gap-2">
+          <svg class="text-cyan shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          Restocked before it runs out
+        </li>
+      </ul>
+    </div>
+    <div class="relative">
+      <div class="group relative rounded-md overflow-hidden shadow-hover aspect-[4/3] bg-mist"
+           data-carousel aria-roledescription="carousel" aria-label="MWM equipment and service">
+        <div class="flex h-full transition-transform duration-500 ease-out" data-carousel-track>
+
+          <figure class="relative min-w-full h-full">
+            <img src="images/hero-smart-cooler.jpg" alt="An MWM smart cooler stocked with drinks and snacks in a gym"
+                 width="1280" height="960" loading="eager" class="h-full w-full object-cover">
+            <span class="absolute inset-0 bg-navy/15 mix-blend-multiply" aria-hidden="true"></span>
+            <span class="absolute inset-0 bg-gradient-to-t from-ink/30 to-transparent" aria-hidden="true"></span>
+          </figure>
+
+          <figure class="relative min-w-full h-full">
+            <img src="images/micro-market.jpg" alt="An MWM micro-market with coolers, fresh food, drinks, and snacks"
+                 width="1280" height="960" loading="lazy" class="h-full w-full object-cover">
+            <span class="absolute inset-0 bg-navy/15 mix-blend-multiply" aria-hidden="true"></span>
+            <span class="absolute inset-0 bg-gradient-to-t from-ink/30 to-transparent" aria-hidden="true"></span>
+          </figure>
+
+          <figure class="relative min-w-full h-full bg-navy px-6 pt-5 pb-10
+                         [background-image:radial-gradient(circle_at_50%_42%,rgba(1,174,240,0.24),transparent_62%)]">
+            <img src="images/cooler-front.png" alt="An MWM AI smart cooler stocked with snacks and drinks"
+                 width="434" height="1000" loading="lazy" class="h-full w-full object-contain">
+          </figure>
+
+          <figure class="relative min-w-full h-full bg-navy px-6 pt-5 pb-10
+                         [background-image:radial-gradient(circle_at_50%_42%,rgba(1,174,240,0.24),transparent_62%)]">
+            <img src="images/cooler-angle.png" alt="An MWM AI smart cooler with tap-to-unlock checkout"
+                 width="506" height="1000" loading="lazy" class="h-full w-full object-contain">
+          </figure>
+
+        </div>
+
+        <button type="button" data-carousel-prev aria-label="Previous image"
+                class="absolute left-3 top-1/2 -translate-y-1/2 grid place-items-center h-10 w-10 rounded-full
+                       bg-white/85 text-navy shadow-card transition duration-200 ease-out
+                       hover:bg-white hover:scale-105 active:scale-95">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+        <button type="button" data-carousel-next aria-label="Next image"
+                class="absolute right-3 top-1/2 -translate-y-1/2 grid place-items-center h-10 w-10 rounded-full
+                       bg-white/85 text-navy shadow-card transition duration-200 ease-out
+                       hover:bg-white hover:scale-105 active:scale-95">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+
+        <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2 rounded-full bg-ink/25 px-2.5 py-1.5 backdrop-blur-sm" data-carousel-dots></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="section bg-white scroll-mt-24">
+  <div class="wrap">
+    <div class="max-w-2xl">
+      <p class="eyebrow">What we do</p>
+      <h2 class="mt-3 text-[clamp(1.9rem,4vw,2.25rem)] font-semibold leading-[1.15]">One partner for the whole break room</h2>
+      <p class="mt-4 text-slate">Pick what fits your space and headcount. We handle delivery, install, stocking, and service. You just tell us where it goes.</p>
+    </div>
+    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <article class="reveal card hover:shadow-hover hover:-translate-y-1 border border-slate/10">
+        <span class="inline-flex h-11 w-11 items-center justify-center rounded-sm bg-mist text-navy" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h4M8 11h4M8 15h4"/><circle cx="16.5" cy="8" r="1"/><circle cx="16.5" cy="12" r="1"/></svg>
+        </span>
+        <h3 class="mt-5 text-xl font-semibold">Vending machines</h3>
+        <p class="mt-2 text-slate text-[16px]">Snacks, cold drinks, and combo machines with tap-to-pay readers. Healthy options on request.</p>
+      </article>
+      <article class="reveal card hover:shadow-hover hover:-translate-y-1 border border-slate/10">
+        <span class="inline-flex h-11 w-11 items-center justify-center rounded-sm bg-mist text-navy" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="12" height="18" rx="2"/><path d="M4 10h12"/><path d="M8 6.5v1M8 13v1"/><path d="M19.5 4.2l.5 1.6 1.6.5-1.6.5-.5 1.6-.5-1.6L17 6.3l1.6-.5z"/></svg>
+        </span>
+        <h3 class="mt-5 text-xl font-semibold">AI smart coolers</h3>
+        <p class="mt-2 text-slate text-[16px]">Grab-and-go coolers with AI checkout. Tap to unlock, take what you want, and walk out. Live stock data keeps them full.</p>
+      </article>
+      <article class="reveal card hover:shadow-hover hover:-translate-y-1 border border-slate/10">
+        <span class="inline-flex h-11 w-11 items-center justify-center rounded-sm bg-mist text-navy" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4Z"/><path d="M6 2v3M10 2v3M14 2v3"/></svg>
+        </span>
+        <h3 class="mt-5 text-xl font-semibold">Office coffee</h3>
+        <p class="mt-2 text-slate text-[16px]">Bean-to-cup brewers, single-serve, and the supplies to keep them running: coffee, tea, and everything alongside.</p>
+      </article>
+      <article class="reveal card hover:shadow-hover hover:-translate-y-1 border border-slate/10">
+        <span class="inline-flex h-11 w-11 items-center justify-center rounded-sm bg-mist text-navy" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><rect x="4" y="9" width="7" height="12"/><rect x="13" y="5" width="7" height="16"/><path d="M7 13h.01M16 9h.01"/></svg>
+        </span>
+        <h3 class="mt-5 text-xl font-semibold">Micro-markets</h3>
+        <p class="mt-2 text-slate text-[16px]">A self-checkout mini-store for higher-traffic locations, with fresh food, wider selection, and open shelves.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Why MWM -->
+<section id="why" class="section bg-mist scroll-mt-24">
+  <div class="wrap">
+    <div class="max-w-2xl">
+      <p class="eyebrow">Why MWM Vending</p>
+      <h2 class="mt-3 text-[clamp(1.9rem,4vw,2.25rem)] font-semibold leading-[1.15]">A vending company that actually shows up</h2>
+      <p class="mt-4 text-slate">Vending and convenience services make the places we live and work a little better. We treat that seriously: respect people, do business honestly, and back it with service that shows.</p>
+    </div>
+    <div class="mt-12 grid md:grid-cols-3 gap-6">
+      <div class="reveal card border border-slate/10">
+        <h3 class="text-xl font-semibold">Local teams</h3>
+        <p class="mt-2 text-slate text-[16px]">A team in every territory across New England and New York. People who know your location and are close enough to keep it running.</p>
+      </div>
+      <div class="reveal card border border-slate/10">
+        <h3 class="text-xl font-semibold">People first</h3>
+        <p class="mt-2 text-slate text-[16px]">You get a real point of contact who knows your account, not a call center. We check in and adjust as your team's tastes change.</p>
+      </div>
+      <div class="reveal card border border-slate/10">
+        <h3 class="text-xl font-semibold">Better selection</h3>
+        <p class="mt-2 text-slate text-[16px]">Name brands, local snacks, healthier picks, fresh food, and seasonal swaps. Tell us what your team wants and we'll carry it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How it works -->
+<section id="how" class="section bg-white scroll-mt-24">
+  <div class="wrap">
+    <div class="max-w-2xl">
+      <p class="eyebrow">How it works</p>
+      <h2 class="mt-3 text-[clamp(1.9rem,4vw,2.25rem)] font-semibold leading-[1.15]">Four steps to a fuller break room</h2>
+    </div>
+    <ol class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <li class="reveal card border border-slate/10">
+        <span class="font-display text-2xl font-bold text-cyan">01</span>
+        <h3 class="mt-2 text-lg font-semibold">Consult</h3>
+        <p class="mt-1.5 text-slate text-[16px]">We talk through your space, headcount, and what your team likes.</p>
+      </li>
+      <li class="reveal card border border-slate/10">
+        <span class="font-display text-2xl font-bold text-cyan">02</span>
+        <h3 class="mt-2 text-lg font-semibold">Design</h3>
+        <p class="mt-1.5 text-slate text-[16px]">We recommend the right mix of vending, office coffee, or a micro-market.</p>
+      </li>
+      <li class="reveal card border border-slate/10">
+        <span class="font-display text-2xl font-bold text-cyan">03</span>
+        <h3 class="mt-2 text-lg font-semibold">Install</h3>
+        <p class="mt-1.5 text-slate text-[16px]">Delivery and setup at no cost, usually within a couple of weeks.</p>
+      </li>
+      <li class="reveal card border border-slate/10">
+        <span class="font-display text-2xl font-bold text-cyan">04</span>
+        <h3 class="mt-2 text-lg font-semibold">Restock</h3>
+        <p class="mt-1.5 text-slate text-[16px]">We monitor inventory and refill before anything runs out.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- Equipment -->
+<section id="equipment" class="section bg-navy text-white scroll-mt-24 relative overflow-hidden">
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true"
+       style="background:
+         radial-gradient(45% 55% at 92% -5%, rgba(1,174,240,0.28), transparent 60%),
+         radial-gradient(40% 50% at 0% 100%, rgba(1,174,240,0.12), transparent 60%);"></div>
+  <span class="grain" aria-hidden="true"></span>
+  <div class="wrap relative">
+    <div class="max-w-2xl">
+      <p class="font-display text-cyan text-[15px] font-semibold">Equipment</p>
+      <h2 class="mt-3 text-[clamp(1.9rem,4vw,2.25rem)] font-semibold leading-[1.15]">Modern machines, built in the USA</h2>
+      <p class="mt-4 text-white/75">Every placement is matched to your space. Here's a sample of what we install and maintain.</p>
+    </div>
+    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <figure class="reveal bg-white/[0.06] rounded-md p-4 ring-1 ring-white/10 transition duration-200 ease-out hover:ring-cyan/40 hover:-translate-y-1">
+        <div class="rounded-sm bg-[radial-gradient(circle_at_50%_38%,rgba(1,174,240,0.16),transparent_68%)]">
+          <img src="images/cooler-front.png" alt="Glass-front smart cooler stocked with snacks and drinks" width="1000" height="1000" loading="lazy" class="w-full object-contain aspect-[4/5]">
+        </div>
+        <figcaption class="mt-4">
+          <span class="block text-[13px] text-cyan">Vending machine</span>
+          <span class="block font-medium mt-0.5">Snack + drink combo</span>
+          <span class="block text-[14px] text-white/60 mt-1">Best for smaller spaces</span>
+        </figcaption>
+      </figure>
+      <figure class="reveal bg-white/[0.06] rounded-md p-4 ring-1 ring-white/10 transition duration-200 ease-out hover:ring-cyan/40 hover:-translate-y-1">
+        <div class="rounded-sm bg-[radial-gradient(circle_at_50%_38%,rgba(1,174,240,0.16),transparent_68%)]">
+          <img src="images/cooler-angle.png" alt="Smart cooler with tap-to-pay checkout" width="1000" height="1000" loading="lazy" class="w-full object-contain aspect-[4/5]">
+        </div>
+        <figcaption class="mt-4">
+          <span class="block text-[13px] text-cyan">Grab and go</span>
+          <span class="block font-medium mt-0.5">AI smart cooler</span>
+          <span class="block text-[14px] text-white/60 mt-1">Cold drinks and grab-and-go</span>
+        </figcaption>
+      </figure>
+      <figure class="reveal bg-white/[0.06] rounded-md p-4 ring-1 ring-white/10 transition duration-200 ease-out hover:ring-cyan/40 hover:-translate-y-1">
+        <div class="relative rounded-sm overflow-hidden">
+          <img src="images/micro-market.jpg" alt="An MWM micro-market with coolers, fresh food, drinks, and snacks" width="1280" height="960" loading="lazy" class="w-full object-cover aspect-[4/5]">
+          <span class="absolute inset-0 bg-navy/20 mix-blend-multiply" aria-hidden="true"></span>
+          <span class="absolute inset-0 bg-gradient-to-t from-ink/30 to-transparent" aria-hidden="true"></span>
+        </div>
+        <figcaption class="mt-4">
+          <span class="block text-[13px] text-cyan">Micro-market</span>
+          <span class="block font-medium mt-0.5">Self-checkout mini-store</span>
+          <span class="block text-[14px] text-white/60 mt-1">For higher-traffic locations</span>
+        </figcaption>
+      </figure>
+    </div>
+    <div class="mt-10">
+      <a href="#contact" class="btn-accent">Ask what fits your space</a>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section bg-mist">
+  <div class="wrap">
+    <div class="max-w-2xl">
+      <p class="eyebrow">In their words</p>
+      <h2 class="mt-3 text-[clamp(1.9rem,4vw,2.25rem)] font-semibold leading-[1.15]">Teams across the Northeast that switched to MWM</h2>
+    </div>
+    <div class="mt-12 grid md:grid-cols-3 gap-6">
+      <blockquote class="reveal card border-t-2 border-cyan border-x border-b border-x-slate/10 border-b-slate/10">
+        <div class="flex gap-0.5 text-cyan" aria-label="5 out of 5 stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 2.9 6.3 6.8.8-5 4.6 1.3 6.7L12 17.8 5.9 20.4 7.2 13.7l-5-4.6 6.8-.8z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 2.9 6.3 6.8.8-5 4.6 1.3 6.7L12 17.8 5.9 20.4 7.2 13.7l-5-4.6 6.8-.8z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 2.9 6.3 6.8.8-5 4.6 1.3 6.7L12 17.8 5.9 20.4 7.2 13.7l-5-4.6 6.8-.8z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 2.9 6.3 6.8.8-5 4.6 1.3 6.7L12 17.8 5.9 20.4 7.2 13.7l-5-4.6 6.8-.8z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 2.9 6.3 6.8.8-5 4.6 1.3 6.7L12 17.8 5.9 20.4 7.2 13.7l-5-4.6 6.8-.8z"/></svg>
+        </div>
+        <p class="mt-4 text-ink">"[Placeholder quote. Swap for a real review, two or three sentences about the switch to MWM and how stocking has been since.]"</p>
+        <footer class="mt-4 text-[14px] text-slate">[Name], [Title], [Company]</footer>
+      </blockquote>
+      <blockquote class="reveal card border-t-2 border-cyan border-x border-b border-x-slate/10 border-b-slate/10">
+        <div class="flex gap-0.5 text-cyan" aria-label="5 out of 5 stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 2.9 6.3 6.8.8-5 4.6 1.3 6.7L12 17.8 5.9 20.4 7.2 13.7l-5-4.6 6.8-.8z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 2.9 6.3 6.8.8-5 4.6 1.3 6.7L12 17.8 5.9 20.4 7.2 13.7l-5-4.6 6.8-.8z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 2.9 6.3 6.8.8-5 4.6 1.3 6.7L12 17.8 5.9 20.4 7.2 13.7l-5-4.6 6.8-.8z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 2.9 6.3 6.8.8-5 4.6 1.3 6.7L12 17.8 5.9 20.4 7.2 13.7l-5-4.6 6.8-.8z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 2.9 6.3 6.8.8-5 4.6 1.3 6.7L12 17.8 5.9 20.4 7.2 13.7l-5-4.6 6.8-.8z"/></svg>
+        </div>
+        <p class="mt-4 text-ink">"[Placeholder quote. Swap for a real review that mentions selection, service response time, or the no-cost install.]"</p>
+        <footer class="mt-4 text-[14px] text-slate">[Name], [Title], [Company]</footer>
+      </blockquote>
+      <blockquote class="reveal card border-t-2 border-cyan border-x border-b border-x-slate/10 border-b-slate/10">
+        <div class="flex gap-0.5 text-cyan" aria-label="5 out of 5 stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 2.9 6.3 6.8.8-5 4.6 1.3 6.7L12 17.8 5.9 20.4 7.2 13.7l-5-4.6 6.8-.8z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 2.9 6.3 6.8.8-5 4.6 1.3 6.7L12 17.8 5.9 20.4 7.2 13.7l-5-4.6 6.8-.8z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 2.9 6.3 6.8.8-5 4.6 1.3 6.7L12 17.8 5.9 20.4 7.2 13.7l-5-4.6 6.8-.8z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 2.9 6.3 6.8.8-5 4.6 1.3 6.7L12 17.8 5.9 20.4 7.2 13.7l-5-4.6 6.8-.8z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 2.9 6.3 6.8.8-5 4.6 1.3 6.7L12 17.8 5.9 20.4 7.2 13.7l-5-4.6 6.8-.8z"/></svg>
+        </div>
+        <p class="mt-4 text-ink">"[Placeholder quote. Swap for a real review from a facilities or operations lead.]"</p>
+        <footer class="mt-4 text-[14px] text-slate">[Name], [Title], [Organization]</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- Contact / CTA -->
+<section id="contact" class="section bg-white scroll-mt-24">
+  <div class="wrap grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
+    <div>
+      <p class="eyebrow">Get started</p>
+      <h2 class="mt-3 text-[clamp(2rem,4.5vw,2.5rem)] font-bold leading-[1.1]">Don't go hangry.</h2>
+      <p class="mt-4 text-slate max-w-[46ch]">Tell us about your location and we'll put together a plan for services, selection, and timing, at no cost. We serve workplaces of every kind across New England and New York.</p>
+      <div class="mt-8 space-y-3 text-[16px]">
+        <p><a class="link-cyan" href="tel:+14132009068">(413) 200-9068</a></p>
+        <p><a class="link-cyan" href="mailto:info@mwmvending.com">info@mwmvending.com</a></p>
+        <p class="text-slate">[Business address: add before launch]</p>
+      </div>
+      <div class="relative mt-8 overflow-hidden rounded-md shadow-hover aspect-[4/3]">
+        <img src="images/team-refill.jpg" alt="The MWM Vending team on site at a client location"
+             width="1280" height="960" loading="lazy" class="h-full w-full object-cover">
+        <span class="absolute inset-0 bg-navy/15 mix-blend-multiply" aria-hidden="true"></span>
+        <span class="absolute inset-0 bg-gradient-to-t from-ink/30 to-transparent" aria-hidden="true"></span>
+      </div>
+    </div>
+
+    <form class="card !bg-[#B7C6E8] border border-navy/15 shadow-hover lg:flex lg:flex-col" method="post" action="#" aria-label="Request a consultation">
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div>
+          <label class="field-label" for="firstName">First name</label>
+          <input class="field" id="firstName" name="firstName" type="text" autocomplete="given-name" required>
+        </div>
+        <div>
+          <label class="field-label" for="lastName">Last name</label>
+          <input class="field" id="lastName" name="lastName" type="text" autocomplete="family-name" required>
+        </div>
+      </div>
+      <div class="mt-4">
+        <label class="field-label" for="email">Work email</label>
+        <input class="field" id="email" name="email" type="email" autocomplete="email" required>
+      </div>
+      <div class="mt-4">
+        <label class="field-label" for="company">Business or organization</label>
+        <input class="field" id="company" name="company" type="text" autocomplete="organization" required>
+      </div>
+      <div class="mt-4">
+        <label class="field-label" for="state">Which state are you in?</label>
+        <select class="field" id="state" name="state" required>
+          <option value="" selected disabled>Select a state</option>
+          <option>Massachusetts</option>
+          <option>Connecticut</option>
+          <option>Rhode Island</option>
+          <option>New Hampshire</option>
+          <option>Vermont</option>
+          <option>Maine</option>
+          <option>New York</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="mt-4 lg:flex-1 lg:flex lg:flex-col">
+        <label class="field-label" for="message">What are you looking for?</label>
+        <textarea class="field lg:flex-1 lg:min-h-[120px] resize-none" id="message" name="message" rows="4" placeholder="e.g. AI smart coolers and vending for a 40-person location"></textarea>
+      </div>
+      <button type="submit" class="btn-primary w-full mt-6">Request my free consultation</button>
+      <p class="mt-3 text-[13px] text-ink/65">We'll get back to you within one business day.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-navy text-white/80">
+  <div class="wrap py-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+    <div class="sm:col-span-2 lg:col-span-2">
+      <img src="MWMLogo.png" alt="MWM Vending" width="150" height="48" class="h-10 w-auto" style="filter: brightness(0) invert(1);">
+      <p class="mt-4 max-w-xs text-[15px] text-white/70">The vending partner that treats your break room like it matters. Vending, office coffee, and micro-markets across New England and New York.</p>
+    </div>
+    <div>
+      <h2 class="font-display text-white text-[15px] font-semibold">Explore</h2>
+      <ul class="mt-3 space-y-2 text-[15px]">
+        <li><a class="hover:text-cyan transition-colors" href="#services">Services</a></li>
+        <li><a class="hover:text-cyan transition-colors" href="#why">Why MWM</a></li>
+        <li><a class="hover:text-cyan transition-colors" href="#how">How it works</a></li>
+        <li><a class="hover:text-cyan transition-colors" href="#equipment">Equipment</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="font-display text-white text-[15px] font-semibold">Contact</h2>
+      <ul class="mt-3 space-y-2 text-[15px]">
+        <li><a class="hover:text-cyan transition-colors" href="tel:+14132009068">(413) 200-9068</a></li>
+        <li><a class="hover:text-cyan transition-colors" href="mailto:info@mwmvending.com">info@mwmvending.com</a></li>
+        <li><a class="hover:text-cyan transition-colors" href="#contact">Request a consultation</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="wrap py-5 text-[13px] text-white/60 flex flex-wrap gap-x-6 gap-y-1 justify-between">
+      <p>&copy; <span id="year">2026</span> MWM Vending. All rights reserved.</p>
+      <p>Site by <a class="underline decoration-white/30 underline-offset-2 hover:text-cyan hover:decoration-cyan transition-colors" href="https://www.ceejaysocial.com/" target="_blank" rel="noopener">CeeJay Social</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  (function () {
+    var items = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      items.forEach(function (el) { el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e, i) {
+        if (e.isIntersecting) {
+          var el = e.target;
+          setTimeout(function () { el.classList.add('in'); }, (i % 4) * 70);
+          io.unobserve(el);
+        }
+      });
+    }, { rootMargin: '0px 0px -10% 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  })();
+
+  // Hero carbonation: floating SVG bubbles (framer-motion style, opacity + scale pulse, gentle drift)
+  (function () {
+    var svg = document.querySelector('svg.bubbles');
+    if (!svg) return;
+    var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var box = svg.getBoundingClientRect();
+    var W = box.width || 1200;
+    var H = box.height || 680;
+    var NS = 'http://www.w3.org/2000/svg';
+    var palette = [
+      'rgba(1,174,240,0.38)', 'rgba(1,174,240,0.26)',
+      'rgba(45,49,146,0.22)', 'rgba(255,255,255,0.6)'
+    ];
+    var count = W < 640 ? 30 : 54;
+    for (var i = 0; i < count; i++) {
+      var r = Math.random() * 22 + 6;
+      var x = Math.random() * W;
+      var y = Math.random() * H;
+      var c = document.createElementNS(NS, 'circle');
+      c.setAttribute('cx', x.toFixed(1));
+      c.setAttribute('cy', y.toFixed(1));
+      c.setAttribute('r', r.toFixed(1));
+      c.setAttribute('fill', palette[i % palette.length]);
+      svg.appendChild(c);
+      if (reduce || !c.animate) { c.setAttribute('opacity', '0.5'); continue; }
+      var dx = Math.random() * 100 - 50;
+      var dy = Math.random() * 100 - 50;
+      c.animate([
+        { opacity: 0.85, transform: 'translate(0px,0px) scale(1)' },
+        { opacity: 0.5, transform: 'translate(' + (dx / 2).toFixed(1) + 'px,' + (dy / 2).toFixed(1) + 'px) scale(1.2)' },
+        { opacity: 0.85, transform: 'translate(' + dx.toFixed(1) + 'px,' + dy.toFixed(1) + 'px) scale(1)' }
+      ], {
+        duration: (5 + Math.random() * 10) * 1000,
+        iterations: Infinity,
+        direction: 'alternate',
+        easing: 'ease-in-out'
+      });
+    }
+  })();
+
+  // Hero image carousel (manual arrows + dots, wraps around)
+  (function () {
+    var root = document.querySelector('[data-carousel]');
+    if (!root) return;
+    var track = root.querySelector('[data-carousel-track]');
+    var slides = track.children;
+    var n = slides.length;
+    var dotsWrap = root.querySelector('[data-carousel-dots]');
+    var i = 0;
+    var dots = [];
+
+    for (var d = 0; d < n; d++) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'h-2 w-2 rounded-full bg-white/50 transition duration-200 ease-out hover:bg-white/80';
+      b.setAttribute('aria-label', 'Show image ' + (d + 1) + ' of ' + n);
+      (function (idx) { b.addEventListener('click', function () { go(idx); }); })(d);
+      dotsWrap.appendChild(b);
+      dots.push(b);
+    }
+
+    function go(next) {
+      i = (next % n + n) % n;
+      track.style.transform = 'translateX(' + (-i * 100) + '%)';
+      for (var k = 0; k < n; k++) {
+        var active = k === i;
+        dots[k].classList.toggle('bg-white', active);
+        dots[k].classList.toggle('bg-white/50', !active);
+        dots[k].classList.toggle('scale-125', active);
+        slides[k].setAttribute('aria-hidden', active ? 'false' : 'true');
+      }
+    }
+
+    root.querySelector('[data-carousel-prev]').addEventListener('click', function () { go(i - 1); });
+    root.querySelector('[data-carousel-next]').addEventListener('click', function () { go(i + 1); });
+    root.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') go(i - 1);
+      if (e.key === 'ArrowRight') go(i + 1);
+    });
+    go(0);
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+# Local dev tooling and source material — not part of the deployed site
+node_modules
+temporary screenshots
+package.json
+package-lock.json
+serve.mjs
+screenshot.mjs
+CLAUDE.md
+MWM-Vending-Brand-Kit.md
+MWM-Vending-Brand-Kit.pdf
+MWMCurrentWebsite.png
+VVSModelWebsite.png
+amModelWebsite1.png
+VVSworkpic1.png
+22(2).png
+33(1).png
+SpectraPRO.webp
+Picture- 542 PRO AI Smart Cooler - HAHA.webp
+HAHA Smart Cooler In Gym .jpg
+ChatGPT Image Sep 10, 2026, 04_39_54 PM.png
